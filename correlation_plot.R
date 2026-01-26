@@ -1,7 +1,9 @@
-# load necessary libraries
+# install and load necessary libraries
+# install.packages("devtools")
+# devtools::install_github("Hy4m/linkET", force = TRUE)
 library(linkET) # for correlation matrix calculation
-library(ggplot2)
-library(reshape2)
+library(ggplot2) # for plotting
+library(reshape2) # for converting matrix into df
 
 #read data from vegan package
 data("varechem", package = "vegan")
@@ -64,6 +66,6 @@ ggplot(corr_df3, aes(Var1, Var2))+
 #   geom_square()
 
 ggsave("plot4.svg",dpi = 1200, width = 7, height = 4)
-svg("plot2.svg")
-dev.off()
+#svg("plot2.svg")
+#dev.off()
 
