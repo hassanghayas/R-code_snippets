@@ -50,13 +50,14 @@ ggplot(corr_df3, aes(Var1, Var2))+
     axis.text.x = element_text(angle = 90, vjust = 1, hjust = 1),
     axis.title = element_blank(),
     legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.justification = "center"
     )+
   guides(
     size = "none",
     color = guide_colorbar(
-      title= NULL,
       direction = "horizontal",
-      barwidth  = unit(0.5, "npc"),
+      barwidth  = unit(7, "cm"),
       barheight = unit(0.4, "cm")
       )
     )
@@ -65,7 +66,7 @@ ggplot(corr_df3, aes(Var1, Var2))+
 # qcorrplot(corr, type="lower", diag=FALSE)+
 #   geom_square()
 
-ggsave("plot4.svg",dpi = 1200, width = 7, height = 4)
+ggsave("correlation_plot.svg",dpi = 1200, width = 3.5, height = 4)
 #svg("plot2.svg")
 #dev.off()
 
