@@ -46,12 +46,15 @@ ggplot(demographic_data) +
     data = midpoints,
     aes(x = Midpoint, xend = Midpoint,
         y = as.numeric(AgeGroup) - 0.14,
-        yend = as.numeric(AgeGroup) + 0.14),
-    color = "black", linetype = "twodash", linewidth = 0.8,
-    inherit.aes = FALSE
+        yend = as.numeric(AgeGroup) + 0.14,
+        linetype = "Midpoint"),
+    color = "black", linewidth = 0.8,
+    inherit.aes = FALSE,
+    key_glyph = "vline"
   ) +
+  scale_linetype_manual(name = NULL, values = c("Midpoint" = "twodash"))+
   
-  # X-axis symmetric ticks and labels (show absolute values)
+  # X-axis symmetric ticks and labels (show absolute values), adjust the values according to your data
   scale_x_continuous(
     limits = c(-max_count - 1, max_count + 1),
     breaks = seq(-max_count, max_count, by = 2),
@@ -60,7 +63,7 @@ ggplot(demographic_data) +
   ) +
   
   # Colors for sex
-  scale_fill_manual(values = c("Male" = "#5782C7", "Female" = "#c46666")) +
+  scale_fill_manual(values = c("Male" = "#6992d3", "Female" = "#d48d8d")) +
   
   # Labels
   labs(
