@@ -57,8 +57,9 @@ ggplot(demographic_data) +
   # X-axis symmetric ticks and labels (show absolute values), adjust the values according to your data
   scale_x_continuous(
     limits = c(-max_count - 1, max_count + 1),
-    breaks = seq(-max_count, max_count, by = 2),
-    labels = abs(seq(-max_count, max_count, by = 2)),
+    breaks = seq(-max_count, max_count, by = 3), # adjust break by value according to your data
+    # labels = abs(seq(-max_count, max_count, by = 2)),
+    labels = abs,
     expand = expansion(add = c(0,0))
   ) +
   
